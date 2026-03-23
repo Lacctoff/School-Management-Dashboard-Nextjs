@@ -1,3 +1,4 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -67,15 +68,16 @@ const ResultListPage = () => {
       <td>
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-tofunmiSky">
+            {/* <button className="w-7 h-7 flex items-center justify-center rounded-full bg-tofunmiSky">
               <Image src="/edit.png" alt="" width={16} height={16} />
-            </button>
+            </button> */}
+            <FormModal table="result" type="update" data={item}/>
           </Link>
           {role === "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-tofunmiPurple">
-              <Image src="/delete.png" alt="" width={16} height={16} />
-            </button>
-            // <FormModal table="teacher" type="delete" id={item.id}/>
+            // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-tofunmiPurple">
+            //   <Image src="/delete.png" alt="" width={16} height={16} />
+            // </button>
+            <FormModal table="result" type="delete" id={item.id}/>
           )}
         </div>
       </td>
@@ -98,10 +100,10 @@ const ResultListPage = () => {
             </button>
             
             {role === "admin" && (
-              <button className="w-8 h-8 flex items-center justify-center rounded-full bg-tofunmiYellow">
-                <Image src="/plus.png" alt="" width={14} height={14} />
-              </button>
-              // <FormModal table="teacher" type="create"/>
+              // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-tofunmiYellow">
+              //   <Image src="/plus.png" alt="" width={14} height={14} />
+              // </button>
+              <FormModal table="result" type="create"/>
             )}
           </div>
         </div>

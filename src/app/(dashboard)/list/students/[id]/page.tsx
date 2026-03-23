@@ -1,6 +1,5 @@
 import Announcements from "@/components/Announcements";
 import BigCalender from "@/components/BigCalender";
-import FormModal from "@/components/FormModal";
 import Performance from "@/components/Performance";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,20 +14,20 @@ const infoItems = [
 
 const statsCards = [
   { icon: "/singleAttendance.png", value: "90%", label: "Attendance" },
-  { icon: "/singleBranch.png", value: "2", label: "Branches" },
-  { icon: "/singleLesson.png", value: "6", label: "Lessons" },
-  { icon: "/singleClass.png", value: "6", label: "Classes" },
+  { icon: "/singleBranch.png", value: "6th Grade", label: "Grade" },
+  { icon: "/singleLesson.png", value: "18", label: "Lessons" },
+  { icon: "/singleClass.png", value: "6A", label: "Class" },
 ];
 
 const shortcutLinks = [
-  { label: "Teacher's Classes", href: "/", bg: "bg-tofunmiSkyLight" },
-  { label: "Teacher's Students", href: "/", bg: "bg-tofunmiPurpleLight" },
-  { label: "Teacher's Lessons", href: "/", bg: "bg-tofunmiYellowLight" },
-  { label: "Teacher's Exams", href: "/", bg: "bg-pink-50" },
-  { label: "Teacher's Assignments", href: "/", bg: "bg-tofunmiSkyLight" },
+  { label: "Student's Lessons", href: "/", bg: "bg-tofunmiSkyLight" },
+  { label: "Student's Teachers", href: "/", bg: "bg-tofunmiPurpleLight" },
+  { label: "Student's Exams", href: "/", bg: "bg-pink-50" },
+  { label: "Student's Assignments", href: "/", bg: "bg-tofunmiSkyLight" },
+  { label: "Student's Results", href: "/", bg: "bg-tofunmiYellowLight" },
 ];
 
-const SingleTeacherPage = () => (
+const SingleStudentPage = () => (
   <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
     {/* LEFT */}
     <div className="w-full xl:w-2/3">
@@ -39,7 +38,7 @@ const SingleTeacherPage = () => (
           {/* image container */}
           <div className="w-1/3">
             <Image
-              src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src="https://images.pexels.com/photos/5414817/pexels-photo-5414817.jpeg?auto=compress&cs=tinysrgb&w=1200"
               alt=""
               width={144}
               height={144}
@@ -47,29 +46,9 @@ const SingleTeacherPage = () => (
             />
           </div>
           <div className="w-2/3 flex flex-col justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <h1 className="text-xl font-semibold">Adelakun Bosun</h1>
-              <FormModal
-                table="teacher"
-                type="update"
-                data={{
-                  id: 1,
-                  name: "Adelakun Bosun",
-                  email: "adelakun.bosun@example.com",
-                  password: "password",
-                  firstName: "Adelakun",
-                  lastName: "Bosun",
-                  phone: "08034567890",
-                  address: "123 Main St, City, Country",
-                  bloodType: "A+",
-                  birthday: "1980-01-01",
-                  sex: "male",
-                  img: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200",
-                }}
-              />
-            </div>
+            <h1 className="text-xl font-semibold">Dapson Adeola</h1>
             <p className="text-sm text-gray-500">
-              Mathematic Teacher, Physics Teacher, Biology Teacher.
+              Primary 6 Head girl Brilliant Stars Int&apos;l schools.
             </p>
 
             {/* info stats */}
@@ -111,8 +90,8 @@ const SingleTeacherPage = () => (
       </div>
 
       {/* BOTTOM */}
-      <div>
-        <h1>Teacher&apos;s Schedule</h1>
+      <div className="bg-white p-4 mt-4 rounded-md">
+        <h1>Student&apos;s Schedule</h1>
         <BigCalender />
       </div>
     </div>
@@ -139,4 +118,4 @@ const SingleTeacherPage = () => (
   </div>
 );
 
-export default SingleTeacherPage;
+export default SingleStudentPage;
